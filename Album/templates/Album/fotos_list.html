@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html>
+<head>
+	<!--CDN de Materialize, al ser un framework css creado por el equipo de Google; brinda la seguridad de que no es necesario descargarlo por hallarse siempre disponible y mejorías de colocación en el navegador.-->
+	<link rel="stylesheet" href="{'% https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css %'}">
+	<!--Optimización web para celular-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>Fotografías</title>
+
+</head>
+<body>
+
+	<div>
+        <h1><a href="/">Historias Fotográficas</a></h1>
+    </div>
+
+    	{%for foto in fotos%}
+    		{{foto}}
+    		<div>
+                <p>Publicado:{{foto.fecha_pub}}</p>
+                <h2><a href="">{{foto.foto_titulo}}</a></h2>
+                <div><a href="">{{foto.foto}}</a></div>
+                <!--Me hace falta poder mostrar la foto en esta parte-->
+            </div>
+        {%end for%}
+	<!--CDN de JQuery-->
+	<script src="{'%https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous%'}"></script>
+	<!--JS de Materialize-->
+	<script src="{'%https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'%}"></script>
+</body>
+</html>
